@@ -1,0 +1,10 @@
+pom.xml
+*jar
+/lib/
+/classes/
+.lein-deps-sum
+*.swp
+*.sh
+war/WEB-INF/classes/
+war/WEB-INF/lib/
+appengine-generated
