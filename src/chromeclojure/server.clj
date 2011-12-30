@@ -1,4 +1,5 @@
 (ns chromeclojure.server 
+  (:use [clojure.data.json :only [json-str]])
   (:use [ring.util.servlet :only [defservice]])
   (:use [compojure.core :only [defroutes GET POST ANY wrap!]])
   (:require [compojure.route :as route])
@@ -8,7 +9,7 @@
   (:use chromeclojure.eval))
 
 (defroutes routes
-   (ANY "/eval" [source] (eval-request source))
+   (ANY "/eval" [source] (json-str (eval-request source)))
    (route/resources "/")
    (route/not-found "Not Found!"))
 

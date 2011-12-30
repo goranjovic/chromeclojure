@@ -2,6 +2,7 @@
   :description "A Clojure Plugin for Google Chrome."
   :dependencies [[org.clojure/clojure "1.3.0"]
 		 [commons-lang/commons-lang "2.5"]
+                 [org.clojure/data.json "0.1.1"]
                  [compojure "0.6.0"]
                  [ring/ring-jetty-adapter "0.3.7"]
                  [clojail "0.5.1"]]

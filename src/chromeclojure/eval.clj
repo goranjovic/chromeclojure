@@ -10,9 +10,15 @@
   (with-open [out (StringWriter.)]
     (sbox form {#'*out* out})))
 
+(defn stringify [result]
+    (if (= clojure.lang.LazySeq (class result))
+            (str (seq result))
+            (str result)))
+
 (defn eval-string [expr sbox]
   (let [form (binding [*read-eval* false] (read-string expr))]
-    (eval-form form sbox)))
+    {:result (stringify (eval-form form sbox))
+     :error false}))
 
 (def try-clojure-tester
   (into secure-tester-without-def
@@ -25,13 +31,9 @@
                       (future (Thread/sleep 600000)
                               (-> *ns* .getName remove-ns)))))
 
-(defn stringify [result]
-    (if (= clojure.lang.LazySeq (class result))
-            (str (seq result))
-            (str result)))
-
 (defn eval-request [expr]
   (try
-    (stringify (eval-string expr (make-sandbox)))
+    (eval-string expr (make-sandbox))
   (catch Exception e
-    (with-out-str (print-stack-trace e)))))
+    {:result (str (root-cause e))
+     :error false})))
