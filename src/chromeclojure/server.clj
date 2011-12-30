@@ -25,7 +25,7 @@
     (jetty/run-jetty (api routes)
         {:port (or (to-port port)
                    (to-port (System/getenv "PORT")) ;; For deploying to Heroku
-                    8801)
+                    8081)
          :join? false}))
 
 (defn -main [& args] (start (first args)))
