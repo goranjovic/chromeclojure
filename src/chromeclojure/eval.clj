@@ -36,4 +36,4 @@
     (eval-string expr (make-sandbox))
   (catch Exception e
     {:result (str (root-cause e))
-     :error false})))
+     :error true})))
