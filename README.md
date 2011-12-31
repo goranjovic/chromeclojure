@@ -6,7 +6,7 @@ Service which evals the code is heavily based on [Raynes' tryclojure application
 
 # Installation and usage 
 
-1. Visit the [Clojure plugin page](http://www.example.com) in Chrome Web Store.
+1. Visit the [Clojure plugin page](https://chrome.google.com/webstore/detail/dkhaobmljgohccicjemmbacpooaacgeo) in Chrome Web Store.
 2. Add the extension.
 3. Select some Clojure code, right click and choose *Eval as Clojure*.
 
