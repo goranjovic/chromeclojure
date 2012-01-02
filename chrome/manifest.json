@@ -1,7 +1,7 @@
 {
   "name": "Clojure Extension",
   "description" : "Adds an option to the context menu which allows you to eval selected Clojure code.",
-  "version" : "0.1",
+  "version" : "0.3",
   "permissions": [
     "contextMenus",
     "notifications",
@@ -13,5 +13,5 @@
     "128": "icon-large.png"
   },
   "background_page": "background.html",
-  "content_security_policy": "default-src 'self'"
+  "content_security_policy": "default-src 'self'; style-src 'self'; connect-src http://chromeclojure.com; "
 }
