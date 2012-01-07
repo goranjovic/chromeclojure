@@ -3,6 +3,7 @@
         [clojail.core :only [sandbox]]
         [clojure.stacktrace :only [root-cause]])
   (:use [clojure.stacktrace :only [print-stack-trace]])
+  (:require [noir.session :as session])
   (:import java.io.StringWriter
 	   java.util.concurrent.TimeoutException))
 
@@ -31,9 +32,14 @@
                       (future (Thread/sleep 600000)
                               (-> *ns* .getName remove-ns)))))
 
+(defn find-sb [old]
+  (if-let [sb (get old "sb")]
+    old
+  (assoc old "sb" (make-sandbox))))
+
 (defn eval-request [expr]
   (try
-    (eval-string expr (make-sandbox))
+    (eval-string expr (get (session/swap! find-sb) "sb"))
   (catch Exception e
     {:result (str (root-cause e))
      :error true})))
