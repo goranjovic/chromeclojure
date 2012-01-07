@@ -8,8 +8,7 @@
 	   java.util.concurrent.TimeoutException))
 
 (defn eval-form [form sbox]
-  (with-open [out (StringWriter.)]
-    (sbox form {#'*out* out})))
+    (sbox form))
 
 (defn stringify [result]
     (if (= clojure.lang.LazySeq (class result))
@@ -17,7 +16,10 @@
             (str result)))
 
 (defn eval-string [expr sbox]
-  (let [form (binding [*read-eval* false] (read-string expr))]
+  (let [;A hack to allow reading multiple Clojure forms
+        ;Well, a workaround actually, since this wraps multiple forms into one
+        wrapped (str "(let [_ nil] \n" expr "\n)")
+        form (binding [*read-eval* false] (read-string wrapped))]
     {:result (stringify (eval-form form sbox))
      :error false}))
 
