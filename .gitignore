@@ -8,3 +8,4 @@ pom.xml
 war/WEB-INF/classes/
 war/WEB-INF/lib/
 appengine-generated
+chrome.zip
