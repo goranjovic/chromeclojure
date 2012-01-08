@@ -29,7 +29,7 @@
 
 (defn make-sandbox []
   (sandbox try-clojure-tester
-           :timeout 2000
+           :timeout 5000
            :init '(do (use '[clojure.repl :only [doc]])
                       (future (Thread/sleep 600000)
                               (-> *ns* .getName remove-ns)))))
