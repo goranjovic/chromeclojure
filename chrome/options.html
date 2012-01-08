@@ -1,0 +1,28 @@
+<html>
+<head>
+<h1>Clojure Extension Options</h1>
+<script src="jquery-1.7.min.js"></script>
+<script>
+function loadChromeClojureOptions(){
+  var responseMethod = localStorage['responseMethod'];
+  $("[name=responseMethod]").filter("[value="+responseMethod+"]").prop("checked",true);
+}
+
+function saveChromeClojureOptions(){
+  var responseMethod = $('input:radio[name=responseMethod]:checked').val();
+  localStorage['responseMethod'] = responseMethod;
+
+  $('#message').text('Saved response method: ' + responseMethod);
+}
+</script>
+</head>
+<body onload="javascript:loadChromeClojureOptions()">
+<p id="message"></p>
+<form id="options" name="options">
+   <p>Choose an evaluation response method:</p>
+   <input type="radio" name="responseMethod" value="notification">Notification</input><br/>
+   <input type="radio" name="responseMethod" value="alert">Alert</input><br/>
+   <input type="button" value="Save" onclick="javascript:saveChromeClojureOptions()"/>
+</form>
+</body>
+</html>

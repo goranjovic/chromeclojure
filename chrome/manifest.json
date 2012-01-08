@@ -13,5 +13,6 @@
     "128": "icon-large.png"
   },
   "background_page": "background.html",
-  "content_security_policy": "default-src 'self'; style-src 'self'; connect-src http://chromeclojure.com; "
+  "options_page": "options.html",
+  "content_security_policy": "default-src 'self' 'unsafe-inline'; style-src 'self'; connect-src http://chromeclojure.com:8081; "
 }
