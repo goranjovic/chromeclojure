@@ -30,7 +30,7 @@ function handleEvalClojureClick(info, tab){
 
 
 	 $.ajax({
-		url: 'http://chromeclojure.com:8081/eval',
+		url: 'http://chromeclojure.com/eval',
 		type: 'POST',
 		dataType: 'json',
                 data: {source: info.selectionText},
@@ -38,7 +38,7 @@ function handleEvalClojureClick(info, tab){
 			sendMessage(response);
 		},
                 error: function(){
-			alert('Error!!1');
+			alert('There was an error while calling chromeclojure backend service. Please try again later or submit a bug report.');
 		}
 		});
 }
