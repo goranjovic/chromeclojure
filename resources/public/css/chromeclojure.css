@@ -1,0 +1,87 @@
+body {
+  color: #d1d9e1;
+  padding: 60px 80px;
+  font-family: 'Helvetica Neue',Helvetica,Verdana;
+  background: url('/img/bg.png');
+}
+a {
+  text-decoration: underline;
+  color: #91979d;
+}
+a:hover {
+  color: #6bffbd;
+}
+h1 {
+  margin-bottom: 0px;
+  color: #d1d9e1;
+}
+h2 {
+  margin-top: 10px;
+  margin-left: 60px;
+  font-size: 18px;
+  font-weight: normal;
+}
+code {
+  float: left;
+  display: inline;
+  border-radius: 8px;
+  padding: 10px;
+  background: #474949;
+  border: 2px solid #616363;
+  font-family: Monaco, Consolas, 'Courier New';
+}
+ul.content {
+  float: left;
+  display: inline;
+}
+ul.content li {
+  float: left;
+  display: inline;
+  margin-bottom: 55px;
+  width: 100%;
+}
+ul.content li .left {
+  float: left;
+  display: inline;
+  width: 55%;
+  text-align: left;
+}
+ul.content li .left p {
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+}
+
+ul.content li .right {
+  float: left;
+  display: inline;
+  margin-right: 5%;
+  width: 40%;
+}
+ul.content li .right code {
+  width: 100%;
+}
+
+ul.content li .right p {
+  max-width: 440px;
+}
+
+#github-banner {
+    position:absolute;
+    right: 0px;
+    top: 10px;
+    display: block;
+    border: 0px;
+    width: 135px;
+    height: 135px;
+    margin-top: -20px;
+    background-image: url(/img/banner.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+#github-banner a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
