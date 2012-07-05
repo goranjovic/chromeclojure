@@ -8,6 +8,7 @@
 (defpage "/" {}
  (html5
   (include-css "/css/chromeclojure.css")
+  (include-js "/js/ga.js")
    [:div#github-banner [:a {:href "https://github.com/goranjovic/chromeclojure" :alt "Fork chromeclojure on Github!"}]]
     [:h1 "Clojure Extension for Chrome"]
     [:h2 "Adds an option to the context menu which allows you to eval selected Clojure code."]
