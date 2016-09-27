@@ -3,15 +3,13 @@
         [clojail.core :only [sandbox]]
         [clojure.stacktrace :only [root-cause]])
   (:use [clojure.stacktrace :only [print-stack-trace]])
-  (:require [noir.session :as session])
-  (:import java.io.StringWriter
-	   java.util.concurrent.TimeoutException))
+  (:import (clojure.lang LazySeq)))
 
 (defn eval-form [form sbox]
     (sbox form))
 
 (defn stringify [result]
-    (if (= clojure.lang.LazySeq (class result))
+    (if (= LazySeq (class result))
             (str (seq result))
             (str result)))
 
@@ -34,14 +32,9 @@
                       (future (Thread/sleep 600000)
                               (-> *ns* .getName remove-ns)))))
 
-(defn find-sb [old]
-  (if-let [sb (get old "sb")]
-    old
-  (assoc old "sb" (make-sandbox))))
-
-(defn eval-request [expr]
+(defn eval-source [s]
   (try
-    (eval-string expr (get (session/swap! find-sb) "sb"))
+    (eval-string s (make-sandbox))
   (catch Exception e
-    {:result (str (root-cause e))
+    {:result (str (.getMessage e))
      :error true})))

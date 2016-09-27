@@ -1,10 +1,10 @@
 (ns chromeclojure.views.eval
-  (:use [noir.core :only [defpage]]
-        [chromeclojure.models.eval :only [eval-request]])
-  (:require [noir.response :as resp]))
+  (:require [ring.util.response :as r]
+            [chromeclojure.models.eval :as service]))
 
-(defpage [:post "/eval"] {:keys [source jsonp]}
-  (let [data (eval-request source)]
-    (if jsonp
-      (resp/jsonp jsonp data)
-      (resp/json data))))
+(defn eval-source
+  {:route        [:post []]
+   :description  "Eval"}
+  [params]
+  (let [data (service/eval-source (:source params))]
+    (r/response data)))

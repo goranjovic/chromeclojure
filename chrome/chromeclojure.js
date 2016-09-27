@@ -30,7 +30,7 @@ function handleEvalClojureClick(info, tab){
 
 
 	 $.ajax({
-		url: 'http://chromeclojure.com/eval',
+		url: 'http://chromeclojure.com/api/v1/eval',
 		type: 'POST',
 		dataType: 'json',
                 data: {source: info.selectionText},
