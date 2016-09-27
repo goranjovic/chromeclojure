@@ -39,7 +39,7 @@
       (route/not-found "Not found"))))
 
 (defn -main [& args]
-  (let [port (or (first args) "8081")]
+  (let [port (or (System/getenv "PORT") "8081")]
     (log/info "Starting chromeclojure server")
     (jetty/run-jetty (create-handler) {:port (new Long port)
                                        :join? false})))
