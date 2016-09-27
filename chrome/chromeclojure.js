@@ -18,7 +18,7 @@ function getToken(){
     return token;
 }
 
-var messageSenders = {
+var displayFns = {
 
 	'notification' : function(response){
         alert((response.error ? 'Error' : 'Result') + ':\n' + response.result);
@@ -31,12 +31,9 @@ var messageSenders = {
 };
 
 
-function sendMessage(response){
-	var responseMethod = localStorage['responseMethod'];
-	if(responseMethod == undefined || responseMethod == null || responseMethod == ''){
-		responseMethod = 'notification';
-	}
-	var sender = messageSenders[responseMethod];
+function displayResult(response){
+	var responseMethod = localStorage.getItem('responseMethod') || 'notification';
+	var sender = displayFns[responseMethod];
 	sender(response);
 }
 
@@ -51,7 +48,7 @@ function handleEvalClojureClick(info, tab){
          headers : {'token' : getToken()},
 
 		 success: function(response){
-		 	sendMessage(response);
+		 	displayResult(response);
 		 },
          error: function(){
 			alert('There was an error while calling chromeclojure backend service. Please try again later or submit a bug report.');
