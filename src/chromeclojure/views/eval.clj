@@ -5,6 +5,7 @@
 (defn eval-source
   {:route        [:post []]
    :description  "Eval"}
-  [params]
-  (let [data (service/eval-source (:source params))]
+  [request params]
+  (let [token (get-in request [:headers "token"])
+        data (service/eval-source token (:source params))]
     (r/response data)))

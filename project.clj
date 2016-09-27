@@ -8,6 +8,7 @@
                  [org.clojure/tools.logging "0.2.6"]
                  [org.slf4j/slf4j-log4j12 "1.7.12"]
                  [log4j/log4j "1.2.17"]
+                 [org.clojure/core.memoize "0.5.6"]
                  [clojail "1.0.6"]]
   :jvm-opts ["-Djava.security.policy=example.policy""-Xmx80M"]
   :main chromeclojure.server
