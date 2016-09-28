@@ -4,7 +4,7 @@
                  [ring/ring-jetty-adapter "1.4.0"]
                  [compojure "1.4.0"]
                  [io.aviso/rook "0.1.39"]
-                 [org.clojure/data.json "0.2.6"]
+                 [cheshire "5.6.3"]
                  [org.clojure/tools.logging "0.2.6"]
                  [org.slf4j/slf4j-log4j12 "1.7.12"]
                  [log4j/log4j "1.2.17"]
