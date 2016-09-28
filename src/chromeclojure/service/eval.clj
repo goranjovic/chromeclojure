@@ -1,4 +1,4 @@
-(ns chromeclojure.models.eval
+(ns chromeclojure.service.eval
   (:use [clojail.testers :only [secure-tester-without-def]]
         [clojail.core :only [sandbox]]
         [clojure.stacktrace :only [root-cause]]
