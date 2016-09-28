@@ -9,7 +9,7 @@ chromeclojure.util.chrome
 (defn manifest [options]
   {:name "Clojure Extension",
    :description "Adds an option to the context menu which allows you to eval selected Clojure code.",
-   :version "0.7",
+   :version (:version options),
    :manifest_version 2,
    :permissions ["contextMenus"
                  "notifications"
