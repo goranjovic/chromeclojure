@@ -13,7 +13,7 @@
     "48": "icon-small.png",
     "128": "icon-large.png"
   },
-  "background": {"scripts" : ["jquery-1.7.min.js", "chromeclojure.js"]},
+  "background": {"scripts" : ["jquery-3.1.1.min.js", "chromeclojure.js"]},
   "options_page": "options.html",
   "content_security_policy": "default-src 'self'; style-src 'self'; connect-src http://chromeclojure.com/; "
 }
