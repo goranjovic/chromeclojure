@@ -1,28 +1,25 @@
 <html>
 <head>
-<h1>Clojure Extension Options</h1>
-<script src="jquery-1.7.min.js"></script>
-<script>
-function loadChromeClojureOptions(){
-  var responseMethod = localStorage['responseMethod'];
-  $("[name=responseMethod]").filter("[value="+responseMethod+"]").prop("checked",true);
-}
-
-function saveChromeClojureOptions(){
-  var responseMethod = $('input:radio[name=responseMethod]:checked').val();
-  localStorage['responseMethod'] = responseMethod;
-
-  $('#message').text('Saved response method: ' + responseMethod);
-}
-</script>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="author" content="Goran Jovic">
 </head>
-<body onload="javascript:loadChromeClojureOptions()">
-<p id="message"></p>
-<form id="options" name="options">
-   <p>Choose an evaluation response method:</p>
-   <input type="radio" name="responseMethod" value="notification">Notification</input><br/>
-   <input type="radio" name="responseMethod" value="alert">Alert</input><br/>
-   <input type="button" value="Save" onclick="javascript:saveChromeClojureOptions()"/>
-</form>
+
+<body>
+
+   <h1>Clojure Extension Options</h1>
+
+   <p id="message"></p>
+   <form id="options" name="options">
+      <p>Choose an evaluation response method:</p>
+      <input type="radio" name="responseMethod" class="response_method" value="notification" />Notification<br/>
+      <input type="radio" name="responseMethod" class="response_method" value="alert" />Alert<br/>
+      <input type="button" id="button" value="Save" />
+   </form>
+
+   <script src="jquery-3.1.1.min.js"></script>
+   <script src="jquery-ui.min.js"></script>
+   <script src="scripts.js"></script>
 </body>
 </html>
