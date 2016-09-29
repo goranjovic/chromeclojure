@@ -18,9 +18,11 @@
 
 (defn static-file-handler
   [request]
-  (let [filename (-> request :params :filename)]
+  (let [path (-> request :params :filename)
+        index? (#{nil "" "/"} path)
+        filename (if index? "index.html" path)]
     (if-let [rsp (r/resource-response filename {:root "public"})]
-      (if (#{nil "" "/"} filename)
+      (if index?
         (r/content-type rsp "text/html")
         (content-type/content-type-response rsp request)))))
 
