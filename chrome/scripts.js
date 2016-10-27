@@ -1,6 +1,5 @@
 function loadChromeClojureOptions(){
     var responseMethod = localStorage['responseMethod'];
-    console.log(responseMethod);
     $('.response_method').filter("[value="+responseMethod+"]").prop("checked",true);
 }
 
@@ -15,3 +14,9 @@ $(document).ready(loadChromeClojureOptions());
 $('#button').on('click', function() {
     saveChromeClojureOptions();
 });
+
+$(document).ready(function() {
+    $('.response_method').checkboxradio();
+});
+
+

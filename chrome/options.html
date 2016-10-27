@@ -1,22 +1,51 @@
-<html>
+<!DOCTYPE html>
 <head>
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta name="author" content="Goran Jovic">
+   <title>ChromeClojure</title>
+   <link rel="stylesheet" href="jquery-ui.css">
+   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-   <h1>Clojure Extension Options</h1>
+   <header>
+      <div class="container clearfix">
+         <div class="logo">
+            <img src="clojure_icon.png" alt="Clojure Logo" />
+         </div>
+         <h1>Chromeclojure Options</h1>
+      </div><!-- .container -->
+   </header>
 
-   <p id="message"></p>
-   <form id="options" name="options">
-      <p>Choose an evaluation response method:</p>
-      <input type="radio" name="responseMethod" class="response_method" value="notification" />Notification<br/>
-      <input type="radio" name="responseMethod" class="response_method" value="alert" />Alert<br/>
-      <input type="button" id="button" value="Save" />
-   </form>
+   <div class="main">
+      <div class="container">
+
+         <!--<h3>Chromeclojure Options</h3>-->
+         <!--<p id="message"></p>-->
+         <!--<form id="options" name="options">-->
+            <!--<p>Choose an evaluation response method:</p>-->
+            <!--<input type="radio" name="responseMethod" class="response_method" value="notification" />Notification<br/>-->
+            <!--<input type="radio" name="responseMethod" class="response_method" value="alert" />Alert<br/>-->
+            <!--<input type="button" id="button" value="Save" />-->
+         <!--</form>-->
+
+         <p id="message"></p>
+         <fieldset>
+            <legend>Choose an evaluation response method:</legend>
+            <label for="notification">Notification</label>
+            <input type="radio" name="responseMethod" id="notification" class="response_method" value="notification" />
+            <br />
+            <label for="alert">Alert</label>
+            <input type="radio" name="responseMethod" id="alert" class="response_method" value="alert" />
+            <br />
+            <input type="button" id="button" value="Save" />
+         </fieldset>
+
+      </div><!-- .container -->
+   </div><!-- .main -->
 
    <script src="jquery-3.1.1.min.js"></script>
    <script src="jquery-ui.min.js"></script>

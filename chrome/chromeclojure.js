@@ -30,13 +30,11 @@ var displayFns = {
 		};
 
 		chrome.notifications.create(options);
-
     },
 
 	'alert' : function(response){
 		alert((response.error ? 'Error' : 'Result') + ':\n' + response.result);
 	}
-
 };
 
 
