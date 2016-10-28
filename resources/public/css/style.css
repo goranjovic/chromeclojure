@@ -84,6 +84,11 @@ a {
     background-position: top right;
 }
 
+#github-banner > a {
+    display: block;
+    height: 135px;
+}
+
 .container {
     width: 80%;
     max-width: 1170px;
@@ -136,12 +141,13 @@ header {
     font-size: 18px;
 }
 
-.main a {
-    color: #000;
+.extension_link {
+    color: #5881d8;
 }
 
-.main a:hover {
-    font-weight: bold;
+.extension_link:hover,
+.extension_link:focus {
+    color: #0037ac;
 }
 
 footer {
