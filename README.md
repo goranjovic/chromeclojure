@@ -29,7 +29,7 @@ And to install the plugin from source:
 
 # License
 
-Copyright (C) 2011 Goran Jovic
+Copyright (C) 2016 Big Solutions (http://bigsolutions.io)
 
 Distributed under the Eclipse Public License, the same as Clojure.
 
