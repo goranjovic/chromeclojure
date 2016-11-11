@@ -141,12 +141,15 @@ header {
     font-size: 18px;
 }
 
-.extension_link {
+.extension_link,
+footer a {
     color: #5881d8;
 }
 
 .extension_link:hover,
-.extension_link:focus {
+.extension_link:focus,
+footer a:hover,
+footer a:focus {
     color: #0037ac;
 }
 
@@ -174,11 +177,6 @@ footer li:last-child {
 }
 
 footer,
-footer li,
-footer a {
+footer li {
     color: #3c3c3c;
-}
-
-footer a:hover {
-    font-weight: bold;
 }
