@@ -19,7 +19,7 @@
                (uber)
                (jar :main 'chromeclojure.server
                     :file "chromeclojure.jar")
-               (sift :include #{#"chromeclojure.jar"})
+               (sift :include #{#"chromeclojure.jar" #"example.policy"})
                (target :dir #{"target"})))
 
 (deftask run

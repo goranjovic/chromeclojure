@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar target/chromeclojure.jar
+web: java -Djava.security.policy=target/example.policy $JAVA_OPTS -jar target/chromeclojure.jar
