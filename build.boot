@@ -10,7 +10,9 @@
                   [org.slf4j/slf4j-log4j12 "1.7.12"]
                   [log4j/log4j "1.2.17"]
                   [org.clojure/core.memoize "0.5.6"]
-                  [clojail "1.0.6"]])
+                  [clojail "1.0.6"]
+
+                  [onetom/boot-lein-generate "0.1.3" :scope "test"]])
 
 (deftask build
          "Builds the application uberjar."
@@ -31,12 +33,8 @@
          (wait))
 
 (deftask idea
-         "Updates pom.xml for Idea to pick up dependency changes."
+         "Generates project.clj for Idea to pick up dependency changes."
          []
-         (comp (pom :project 'chromeclojure
-                    :version "0.0.1-SNAPSHOT"
-                    :description "A Clojure Plugin for Google Chrome.")
-               (sift :move {#"META-INF/maven/chromeclojure/chromeclojure/pom.xml" "pom.xml"}
-                     :include #{#"pom.xml"})
-               (target :dir #{"."}
-                       :no-clean true)))
+         (require 'boot.lein)
+         (let [runner (resolve 'boot.lein/generate)]
+           (runner)))

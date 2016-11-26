@@ -1,4 +1,5 @@
 pom.xml
+project.clj
 *jar
 /lib/
 /classes/
