@@ -20,14 +20,21 @@ function getToken(){
 
 var displayFns = {
 
-	'notification' : function(response){
-        alert((response.error ? 'Error' : 'Result') + ':\n' + response.result);
+    'notification' : function(response){
+
+		var options = {
+			type: 'basic',
+			title: 'Eval as Clojure',
+			message: (response.error ? 'Error' : 'Result') + ':\n' + response.result,
+			iconUrl: 'icon-small.png'
+		};
+
+		chrome.notifications.create(options);
     },
 
 	'alert' : function(response){
 		alert((response.error ? 'Error' : 'Result') + ':\n' + response.result);
 	}
-
 };
 
 

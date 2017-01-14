@@ -1,6 +1,6 @@
 (ns chromeclojure.views.eval
   (:require [ring.util.response :as r]
-            [chromeclojure.models.eval :as service]))
+            [chromeclojure.service.eval :as service]))
 
 (defn eval-source
   {:route        [:post []]

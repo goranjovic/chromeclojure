@@ -1,1 +1,1 @@
-web: lein run
+web: java -Djava.security.policy=target/example.policy $JAVA_OPTS -jar target/chromeclojure.jar
